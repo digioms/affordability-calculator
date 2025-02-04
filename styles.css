@@ -1,47 +1,27 @@
-body { 
-    font-family: Arial, sans-serif; 
-    background: #f4f4f4; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    margin: 0;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
 }
-.container { 
-    background: white; 
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
-    max-width: 400px; 
-    width: 100%;
-}
-h2 { text-align: center; color: #333; }
-label { font-weight: bold; display: block; margin-top: 10px; }
-input { 
-    width: 100%; 
-    padding: 8px; 
-    margin: 5px 0; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    font-size: 16px; 
-}
-.result { 
-    margin-top: 15px; 
-    padding: 10px; 
-    text-align: center; 
-    font-size: 18px; 
-    font-weight: bold; 
-    border-radius: 5px;
-}
-.green { background: #c8f7c5; color: #2d882d; }
-.yellow { background: #fff8b3; color: #b88c00; }
-.red { background: #f7c5c5; color: #b82d2d; }
 
-#monthlyAmortization {
-    font-size: 18px;
-    font-weight: bold;
+#calculatorContainer {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+h2 {
+    color: #333;
+}
+
+label {
+    display: block;
     margin-top: 10px;
-    color: #007bff;
+    font-weight: bold;
 }
 
-
+input {
