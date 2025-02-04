@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Affordability Calculator</title>
+    <title>Mortgage Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,32 +11,39 @@
     <div id="calculatorContainer">
         <h2>Mortgage Calculator</h2>
 
-        <label for="income">Annual Household Income:</label>
-        <input type="number" id="income" />
+        <div class="calculator-grid">
+            <!-- Left Side: Inputs -->
+            <div class="input-section">
+                <label for="income">Annual Household Income:</label>
+                <input type="number" id="income" />
 
-        <label for="debt">Monthly Debt:</label>
-        <input type="number" id="debt" value="250" />
+                <label for="debt">Monthly Debt:</label>
+                <input type="number" id="debt" value="250" />
 
-        <label for="downPayment">Down Payment:</label>
-        <input type="number" id="downPayment" value="50000" />
+                <label for="downPayment">Down Payment:</label>
+                <input type="number" id="downPayment" value="50000" />
 
-        <label for="loanTerm">Loan Term (years):</label>
-        <input type="number" id="loanTerm" value="30" />
+                <label for="loanTerm">Loan Term (years):</label>
+                <input type="number" id="loanTerm" value="30" />
 
-        <label for="interestRate">Interest Rate (%):</label>
-        <input type="number" id="interestRate" value="5.000" step="0.01" />
+                <label for="interestRate">Interest Rate (%):</label>
+                <input type="number" id="interestRate" value="5.000" step="0.01" />
 
-        <label for="housePriceRange">House Price:</label>
-        <input type="range" id="housePriceRange" min="50000" max="1000000" value="250000" />
-        <span id="housePriceDisplay">$250,000</span>
+                <label for="housePriceRange">House Price:</label>
+                <input type="range" id="housePriceRange" min="50000" max="1000000" value="250000" />
+                <span id="housePriceDisplay">$250,000</span>
+            </div>
 
-        <p id="dtiDisplay"></p>
-        <p id="affordabilityIndicator"></p>
-        
-        <!-- Monthly Amortization Display -->
-        <p id="monthlyAmortization">Monthly Amortization: $0.00</p>
+            <!-- Right Side: Results -->
+            <div class="result-section">
+                <h3>Results</h3>
+                <p id="monthlyAmortization">Monthly Amortization: $0.00</p>
+                <p id="dtiDisplay">DTI: 0%</p>
+                <p id="affordabilityIndicator">Affordability: --</p>
+            </div>
+        </div>
     </div>
 
-    <script src="mortgage_calculator.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
