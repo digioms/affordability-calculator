@@ -31,7 +31,17 @@ function updateAffordabilityIndicator(dti) {
 function updateCalculations() {
     let income = parseFloat(document.getElementById("income").value) || 0;
     let debt = parseFloat(document.getElementById("debt").value) || 0;
-    let dti = calculateDTI(income, debt);
+    let housePrice = parseFloat(document.getElementById("housePriceRange").value) || 0;
+    let downPayment = parseFloat(document.getElementById("downPayment").value) || 0;
+    let loanTerm = parseFloat(document.getElementById("loanTerm").value) || 0;
+    let interestRate = parseFloat(document.getElementById("interestRate").value) || 0;
+    
+    let loanAmount = housePrice - downPayment;
+    let monthlyAmortization = calculateMortgage(loanAmount, interestRate, loanTerm);
+    document.getElementById("monthlyAmortization").innerText = `Monthly Amortization: $${monthlyAmortization}`;
+    
+    let newDebt = debt + parseFloat(monthlyAmortization);
+    let dti = calculateDTI(income, newDebt);
     document.getElementById("dtiDisplay").innerText = `DTI: ${dti}%`;
     updateAffordabilityIndicator(dti);
 }
@@ -39,13 +49,7 @@ function updateCalculations() {
 function updateHousePrice() {
     let housePrice = document.getElementById("housePriceRange").value;
     document.getElementById("housePriceDisplay").innerText = `$${parseInt(housePrice).toLocaleString()}`;
-    let income = parseFloat(document.getElementById("income").value) || 0;
-    let debt = parseFloat(document.getElementById("debt").value) || 0;
-    let estimatedMortgage = calculateMortgage(housePrice - (parseFloat(document.getElementById("downPayment").value) || 0), parseFloat(document.getElementById("interestRate").value) || 0, parseFloat(document.getElementById("loanTerm").value) || 0);
-    let newDebt = debt + parseFloat(estimatedMortgage);
-    let dti = calculateDTI(income, newDebt);
-    document.getElementById("dtiDisplay").innerText = `DTI: ${dti}%`;
-    updateAffordabilityIndicator(dti);
+    updateCalculations();
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -63,6 +67,11 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("housePriceRange").max = "1000000";
     document.getElementById("housePriceRange").value = "250000";
     document.getElementById("housePriceDisplay").innerText = "$250,000";
+    
+    let amortizationDisplay = document.createElement("p");
+    amortizationDisplay.id = "monthlyAmortization";
+    document.getElementById("calculatorContainer").appendChild(amortizationDisplay);
+    
     updateCalculations();
     updateHousePrice();
 });
