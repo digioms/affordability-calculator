@@ -10,8 +10,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    max-width: 100%;
     margin: auto;
+    overflow: hidden;
 }
 
 /* Grid Layout for Two Columns */
@@ -25,7 +26,7 @@ body {
 /* Left Column: Inputs */
 .input-section {
     flex: 1;
-    min-width: 350px;
+    min-width: 300px;
     text-align: left;
 }
 
@@ -36,7 +37,7 @@ body {
 }
 
 .input-section input {
-    width: 90%;
+    width: 100%;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
@@ -60,7 +61,7 @@ input[type="range"] {
 /* Right Column: Results */
 .result-section {
     flex: 1;
-    min-width: 350px;
+    min-width: 300px;
     background: #f8f9fa;
     padding: 15px;
     border-radius: 10px;
