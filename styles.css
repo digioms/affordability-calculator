@@ -3,6 +3,7 @@ body {
     background-color: #f4f4f4;
     text-align: center;
     padding: 20px;
+    overflow-x: hidden; /* Hides unwanted horizontal scrolling */
 }
 
 #calculatorContainer {
@@ -10,7 +11,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
+    max-width: 800px; /* Adjusted max width to fit content area */
+    width: 100%;
     margin: auto;
     overflow: hidden;
 }
@@ -18,16 +20,15 @@ body {
 /* Grid Layout for Two Columns */
 .calculator-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevents stacking */
     justify-content: space-between;
     gap: 20px;
 }
 
 /* Left Column: Inputs */
-.input-section {
+.input-section, .result-section {
     flex: 1;
-    min-width: 300px;
-    text-align: left;
+    min-width: 300px; /* Ensures side-by-side layout */
 }
 
 .input-section label {
