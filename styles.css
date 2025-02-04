@@ -11,7 +11,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px; /* Adjusted max width to fit content area */
+    max-width: 700px; /* Adjusted max width to fit content area */
     width: 100%;
     margin: auto;
     overflow: hidden;
@@ -31,28 +31,86 @@ body {
     min-width: 300px; /* Ensures side-by-side layout */
 }
 
-/* Input Styles */
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.input-section label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-/* Affordability Indicator Styles */
-.result {
+.input-section input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#housePriceDisplay {
     font-size: 18px;
     font-weight: bold;
+    color: #007bff;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Right Column: Results */
+.result-section {
+    flex: 1;
+    min-width: 300px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-section h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#dtiDisplay, #monthlyAmortization, #affordabilityIndicator {
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.result {
     padding: 10px;
     border-radius: 5px;
 }
+
+/* Color Coding for Affordability */
 .green {
-    color: green;
+    color: white;
+    background-color: #28a745;
 }
+
 .yellow {
-    color: orange;
+    color: white;
+    background-color: #ffc107;
 }
+
 .red {
-    color: red;
+    color: white;
+    background-color: #dc3545;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .calculator-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-section, .result-section {
+        width: 100%;
+    }
 }
