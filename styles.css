@@ -36,3 +36,12 @@ input {
 .green { background: #c8f7c5; color: #2d882d; }
 .yellow { background: #fff8b3; color: #b88c00; }
 .red { background: #f7c5c5; color: #b82d2d; }
+
+#monthlyAmortization {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #007bff;
+}
+
+
