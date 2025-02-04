@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Mortgage Calculator</h2>
+
+        <label>Annual Household Income:</label>
+        <input type="number" id="income">
+
+        <label>Monthly Debt:</label>
+        <input type="number" id="debt">
+
+        <label>Down Payment:</label>
+        <input type="number" id="downPayment">
+
+        <label>Loan Term (Years):</label>
+        <input type="number" id="loanTerm">
+
+        <label>Interest Rate (%):</label>
+        <input type="number" step="0.01" id="interestRate">
+
+        <label>Maximum House Price:</label>
+        <input type="range" id="housePriceRange" min="100000" max="1000000" step="5000">
+        <p id="housePriceDisplay">$250,000</p>
+
+        <div id="dtiDisplay" class="result">DTI: 0%</div>
+        <div id="affordabilityIndicator" class="result">Affordability: N/A</div>
+    </div>
+
+    <script src="mortgage_calculator.js"></script>
+
+</body>
+</html>
